@@ -97,7 +97,7 @@ public class LRUMemoryCacheConcurrentUnitTest {
 	 * @return array con i parametri, tipo Collection [3]
 	 */
 	@Parameters
-	public static Collection<String[]> config() {
+	public static Collection<String[]> getTestParameters() {
 
 		// ...?
 
