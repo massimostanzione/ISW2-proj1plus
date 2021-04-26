@@ -1,4 +1,4 @@
-package it.uniroma2.dicii.isw2.jcs.paramTests;
+package org.apache.jcs.engine.memory.lru;
 
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
@@ -19,116 +19,83 @@ package it.uniroma2.dicii.isw2.jcs.paramTests;
  * under the License.
  */
 
-import org.junit.*;
-
-import static org.junit.Assert.*;
-
-import java.util.Arrays;
-import java.util.Collection;
+import junit.extensions.ActiveTestSuite;
+import junit.framework.Test;
+import junit.framework.TestCase;
 
 import org.apache.jcs.engine.CacheElement;
 import org.apache.jcs.engine.behavior.ICacheElement;
 import org.apache.jcs.engine.control.CompositeCache;
 import org.apache.jcs.engine.control.CompositeCacheManager;
 import org.apache.jcs.engine.memory.lru.LRUMemoryCache;
-import org.junit.runner.RunWith;
-import org.junit.runners.Parameterized;
-import org.junit.runners.Parameterized.Parameters;
 
 /**
  * Test which exercises the LRUMemory cache. This one uses three different
  * regions for three threads.
  *
- * * RIMOSSI:
- * 
- * - costruttore vecchio
- * 
- * - main (non serve più)
- * 
- * - suite (perché la chiamata ai test è automatica)
- * 
  * @version $Id: LRUMemoryCacheConcurrentUnitTest.java 536904 2007-05-10
  *          16:03:42Z tv $
  */
-
-@RunWith(Parameterized.class) // [1]
-public class LRUMemoryCacheConcurrentUnitTest {
+public class LRUMemoryCacheConcurrentUnitTest extends TestCase {
 	/**
 	 * Number of items to cache, twice the configured maxObjects for the memory
 	 * cache regions.
 	 */
 	private static int items = 200;
-	CompositeCache cache;
 
-	// ---------- PARAMETRI DEL TEST
-	// sono attributi privati della classe di test [2]
-	// oggetto testato
-	private LRUMemoryCache lru;
-	// input al test (passato al costruttore)
-	private String region;
-	// output atteso
-	// (none)
-	
+	/**
+	 * Constructor for the TestDiskCache object.
+	 *
+	 * @param testName
+	 */
+	public LRUMemoryCacheConcurrentUnitTest(String testName) {
+		super(testName);
+	}
+
+	/**
+	 * Main method passes this test to the text test runner.
+	 *
+	 * @param args
+	 */
+	public static void main(String args[]) {
+		String[] testCaseName = { LRUMemoryCacheConcurrentUnitTest.class.getName() };
+		junit.textui.TestRunner.main(testCaseName);
+	}
+
+	/**
+	 * A unit test suite for JUnit
+	 *
+	 * @return The test suite
+	 */
+	public static Test suite() {
+		ActiveTestSuite suite = new ActiveTestSuite();
+
+		suite.addTest(new LRUMemoryCacheConcurrentUnitTest("testLRUMemoryCache") {
+			public void runTest() throws Exception {
+				this.runTestForRegion("indexedRegion1");
+			}
+		});
+
+		/*
+		 * suite.addTest( new TestDiskCache( "testIndexedDiskCache2" ) { public void
+		 * runTest() throws Exception { this.runTestForRegion( "indexedRegion2" ); } }
+		 * );
+		 *
+		 * suite.addTest( new TestDiskCache( "testIndexedDiskCache3" ) { public void
+		 * runTest() throws Exception { this.runTestForRegion( "indexedRegion3" ); } }
+		 * );
+		 */
+		return suite;
+	}
+
 	/**
 	 * Test setup
-	 * 
-	 * da eseguirsi prima di ogni test
 	 */
-	@Before
 	public void setUp() {
 		// JCS.setConfigFilename( "/TestDiskCache.ccf" );
 	}
-	/**
-	 * ---------- CONFIGURAZIONE oggetto da testare, che è lru, vedasi dichiarazione
-	 * negli attributi della classe
-	 * 
-	 * lo posso invocare da costruttore, @Before, @BeforeClass...
-	 * 
-	 * @param region
-	 * 
-	 * @see lru
-	 */
-	private void configure(String region) {
-		// inizializzazione attributo
-		this.region = region;
-
-		// istanziazione dell'oggetto da testare
-		CompositeCacheManager cacheMgr = CompositeCacheManager.getUnconfiguredInstance();
-		cacheMgr.configure("/TestDiskCache.ccf");
-		cache = cacheMgr.getCache(region);
-		lru = new LRUMemoryCache();
-	}
 
 	/**
-	 * ---------- SETTAGGIO VALORI DEI PARAMETRI PER IL TEST
-	 * 
-	 * @return array con i parametri, tipo Collection [3]
-	 */
-	@Parameters
-	public static Collection<String[]> getTestParameters() {
-
-		// ...?
-
-		return Arrays.asList(new String[][] { { "indexedRegion1" } });
-
-	}
-
-	/**
-	 * ---------- COSTRUTTORE
-	 * 
-	 * ha tanti argomenti quanti i parametri del test [4]
-	 * 
-	 * @param region
-	 */
-	public LRUMemoryCacheConcurrentUnitTest(String region) {
-		this.configure(region);
-	}
-
-	/**
-	 * ---------- UNICO TEST DI QUESTA CLASSE
-	 * 
-	 * NOTA ho spostato l'inizializzazione di lru in quanto oggetto del test
-	 * 
 	 * Adds items to cache, gets them, and removes them. The item count is more than
 	 * the size of the memory cache, so items should be dumped.
 	 *
@@ -136,8 +103,12 @@ public class LRUMemoryCacheConcurrentUnitTest {
 	 *
 	 * @exception Exception If an error occurs
 	 */
-	@Test
-	public void runTestForRegion() throws Exception {
+	public void runTestForRegion(String region) throws Exception {
+		CompositeCacheManager cacheMgr = CompositeCacheManager.getUnconfiguredInstance();
+		cacheMgr.configure("/TestDiskCache.ccf");
+		CompositeCache cache = cacheMgr.getCache(region);
+
+		LRUMemoryCache lru = new LRUMemoryCache();
 		lru.initialize(cache);
 
 		// Add items to cache
