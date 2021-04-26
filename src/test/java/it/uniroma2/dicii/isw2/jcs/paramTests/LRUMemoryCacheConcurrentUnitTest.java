@@ -64,11 +64,20 @@ public class LRUMemoryCacheConcurrentUnitTest {
 	// sono attributi privati della classe di test [2]
 	// oggetto testato
 	private LRUMemoryCache lru;
-	// input al test
+	// input al test (passato al costruttore)
 	private String region;
 	// output atteso
 	// (none)
-
+	
+	/**
+	 * Test setup
+	 * 
+	 * da eseguirsi prima di ogni test
+	 */
+	@Before
+	public void setUp() {
+		// JCS.setConfigFilename( "/TestDiskCache.ccf" );
+	}
 	/**
 	 * ---------- CONFIGURAZIONE oggetto da testare, che è lru, vedasi dichiarazione
 	 * negli attributi della classe
@@ -79,7 +88,6 @@ public class LRUMemoryCacheConcurrentUnitTest {
 	 * 
 	 * @see lru
 	 */
-	@Before // TODO può coesistere con chiamate esplicite?
 	private void configure(String region) {
 		// inizializzazione attributo
 		this.region = region;
@@ -108,7 +116,7 @@ public class LRUMemoryCacheConcurrentUnitTest {
 	/**
 	 * ---------- COSTRUTTORE
 	 * 
-	 * ha gli stessi parametri del test [4]
+	 * ha tanti argomenti quanti i parametri del test [4]
 	 * 
 	 * @param region
 	 */
