@@ -138,7 +138,7 @@ public class EventQueueConcurrentLoadTest {
 	 * 
 	 * @throws Exception when a testCaseName is not recognized
 	 */
-	@Test
+	@Test(timeout=10000)
 	public void compactedSuiteSwitcherTest() throws Exception {
 		String testToBeExecuted = testCaseName;
 		System.out.println("Starting test: " + testCaseName);
