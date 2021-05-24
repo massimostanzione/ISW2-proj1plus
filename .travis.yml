@@ -1,2 +1,1 @@
 language: java
-script: mvn install:install-file -DgroupId=javax.sql -DartifactId=jdbc-stdext -Dversion=2.0 -Dpackaging=jar -Dfile=./download/jdbc-stdext-2.0.jar
