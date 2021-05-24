@@ -1,0 +1,62 @@
+2021-05-24 20:23:01,746 INFO [CacheEventQueue] - <Cache event queue created: CacheEventQueue [listenerId=1, cacheName=testCache1]>
+2021-05-24 20:23:01,767 INFO [CacheEventQueue] - <Cache event queue created: CacheEventQueue [listenerId=1, cacheName=testCache1]>
+2021-05-24 20:23:01,755 INFO [CacheEventQueue] - <Cache event queue created: CacheEventQueue [listenerId=1, cacheName=testCache1]>
+2021-05-24 20:23:01,925 INFO [CacheEventQueue] - <Cache event queue created: CacheEventQueue [listenerId=1, cacheName=testCache1]>
+2021-05-24 20:23:01,937 INFO [CacheEventQueue] - <Cache event queue created: CacheEventQueue [listenerId=1, cacheName=testCache1]>
+2021-05-24 20:23:01,955 INFO [CacheEventQueue] - <Cache event queue created: CacheEventQueue [listenerId=1, cacheName=testCache1]>
+2021-05-24 20:23:01,973 INFO [CacheEventQueue] - <Cache event queue created: CacheEventQueue [listenerId=1, cacheName=testCache1]>
+2021-05-24 20:23:01,997 INFO [CacheEventQueue] - <Cache event queue created: CacheEventQueue [listenerId=1, cacheName=testCache1]>
+2021-05-24 20:23:02,017 INFO [CacheEventQueue] - <Cache event queue created: CacheEventQueue [listenerId=1, cacheName=testCache1]>
+2021-05-24 20:23:03,398 INFO [CompositeCacheManager] - <Instance is null, creating with provided config>
+2021-05-24 20:23:03,406 INFO [CompositeCacheManager] - <Creating cache manager from config file: /TestDiskCache.ccf>
+2021-05-24 20:23:03,462 INFO [ThreadPoolManager] - <thread_pool.default PoolConfiguration = useBoundary = [true] boundarySize = [2000] maximumPoolSize = [150] minimumPoolSize = [4] keepAliveTime = [350000] whenBlockedPolicy = [RUN] startUpSize = [4]>
+2021-05-24 20:23:03,476 INFO [CompositeCacheConfigurator] - <Setting default auxiliaries to indexedDiskCache>
+2021-05-24 20:23:03,510 INFO [CompositeCacheConfigurator] - <setting defaultCompositeCacheAttributes to [ useLateral = true, useRemote = true, useDisk = true, maxObjs = 100, maxSpoolPerRun = -1, diskUsagePattern = 0 ]>
+2021-05-24 20:23:03,516 INFO [CompositeCacheConfigurator] - <No special ElementAttribute class defined for key [jcs.default.elementattributes], using default class.>
+2021-05-24 20:23:03,517 INFO [CompositeCacheConfigurator] - <setting defaultElementAttributes to [ IS_LATERAL = true, IS_SPOOL = true, IS_REMOTE = true, IS_ETERNAL = true, MaxLifeSeconds = -1, IdleTime = -1, CreateTime = 1621880583516, LastAccessTime = 1621880583516, getTimeToLiveSeconds() = -1, createTime = 1621880583516 ]>
+2021-05-24 20:23:03,518 INFO [CompositeCacheConfigurator] - <No special ElementAttribute class defined for key [jcs.system.groupIdCache.elementattributes], using default class.>
+2021-05-24 20:23:03,684 INFO [LRUMemoryCache] - <initialized LRUMemoryCache for groupIdCache>
+2021-05-24 20:23:03,684 INFO [CompositeCache] - <Constructed cache with name [groupIdCache] and cache attributes [ useLateral = true, useRemote = true, useDisk = true, maxObjs = 10000, maxSpoolPerRun = -1, diskUsagePattern = 0 ]>
+2021-05-24 20:23:03,977 INFO [IndexedDiskCache] - <Region [groupIdCache] Cache file root directory: target/test-sandbox/indexed-disk-cache>
+2021-05-24 20:23:03,988 INFO [IndexedDiskCache] - <Region [groupIdCache] Set maxKeySize to: '5000'>
+2021-05-24 20:23:03,992 INFO [IndexedDiskCache] - <Region [groupIdCache] Indexed Disk Cache is alive.>
+2021-05-24 20:23:03,994 INFO [CompositeCacheConfigurator] - <No special ElementAttribute class defined for key [jcs.region.indexedRegion4.elementattributes], using default class.>
+2021-05-24 20:23:03,995 INFO [LRUMemoryCache] - <initialized LRUMemoryCache for indexedRegion4>
+2021-05-24 20:23:04,007 INFO [CompositeCache] - <Constructed cache with name [indexedRegion4] and cache attributes [ useLateral = true, useRemote = true, useDisk = true, maxObjs = 100, maxSpoolPerRun = -1, diskUsagePattern = 0 ]>
+2021-05-24 20:23:04,010 INFO [IndexedDiskCache] - <Region [indexedRegion4] Cache file root directory: target/test-sandbox/indexed-disk-cache2>
+2021-05-24 20:23:04,011 INFO [IndexedDiskCache] - <Region [indexedRegion4] Set maxKeySize to: '5000'>
+2021-05-24 20:23:04,012 INFO [IndexedDiskCache] - <Region [indexedRegion4] Indexed Disk Cache is alive.>
+2021-05-24 20:23:04,013 INFO [CompositeCacheConfigurator] - <No special ElementAttribute class defined for key [jcs.region.indexedRegion3.elementattributes], using default class.>
+2021-05-24 20:23:04,014 INFO [LRUMemoryCache] - <initialized LRUMemoryCache for indexedRegion3>
+2021-05-24 20:23:04,014 INFO [CompositeCache] - <Constructed cache with name [indexedRegion3] and cache attributes [ useLateral = true, useRemote = true, useDisk = true, maxObjs = 100, maxSpoolPerRun = -1, diskUsagePattern = 0 ]>
+2021-05-24 20:23:04,015 INFO [IndexedDiskCache] - <Region [indexedRegion3] Cache file root directory: target/test-sandbox/indexed-disk-cache>
+2021-05-24 20:23:04,016 INFO [IndexedDiskCache] - <Region [indexedRegion3] Set maxKeySize to: '5000'>
+2021-05-24 20:23:04,017 INFO [IndexedDiskCache] - <Region [indexedRegion3] Indexed Disk Cache is alive.>
+2021-05-24 20:23:04,017 INFO [CompositeCacheConfigurator] - <No special ElementAttribute class defined for key [jcs.region.indexedRegion2.elementattributes], using default class.>
+2021-05-24 20:23:04,018 INFO [LRUMemoryCache] - <initialized LRUMemoryCache for indexedRegion2>
+2021-05-24 20:23:04,018 INFO [CompositeCache] - <Constructed cache with name [indexedRegion2] and cache attributes [ useLateral = true, useRemote = true, useDisk = true, maxObjs = 100, maxSpoolPerRun = -1, diskUsagePattern = 0 ]>
+2021-05-24 20:23:04,019 INFO [IndexedDiskCache] - <Region [indexedRegion2] Cache file root directory: target/test-sandbox/indexed-disk-cache>
+2021-05-24 20:23:04,020 INFO [IndexedDiskCache] - <Region [indexedRegion2] Set maxKeySize to: '5000'>
+2021-05-24 20:23:04,020 INFO [IndexedDiskCache] - <Region [indexedRegion2] Indexed Disk Cache is alive.>
+2021-05-24 20:23:04,021 INFO [CompositeCacheConfigurator] - <No special ElementAttribute class defined for key [jcs.region.indexedRegion1.elementattributes], using default class.>
+2021-05-24 20:23:04,021 INFO [LRUMemoryCache] - <initialized LRUMemoryCache for indexedRegion1>
+2021-05-24 20:23:04,021 INFO [CompositeCache] - <Constructed cache with name [indexedRegion1] and cache attributes [ useLateral = true, useRemote = true, useDisk = true, maxObjs = 100, maxSpoolPerRun = -1, diskUsagePattern = 0 ]>
+2021-05-24 20:23:04,023 INFO [IndexedDiskCache] - <Region [indexedRegion1] Cache file root directory: target/test-sandbox/indexed-disk-cache>
+2021-05-24 20:23:04,025 INFO [IndexedDiskCache] - <Region [indexedRegion1] Set maxKeySize to: '5000'>
+2021-05-24 20:23:04,051 INFO [IndexedDiskCache] - <Region [indexedRegion1] Loaded keys from [indexedRegion1], key count: 32; up to 5000 will be available.>
+2021-05-24 20:23:04,055 INFO [IndexedDiskCache] - <Region [indexedRegion1] Finished inital consistency check, isOk = true in 2ms.>
+2021-05-24 20:23:04,056 INFO [IndexedDiskCache] - <Region [indexedRegion1] Indexed Disk Cache is alive.>
+2021-05-24 20:23:04,056 INFO [CompositeCacheConfigurator] - <Parsed regions [indexedRegion4, indexedRegion3, indexedRegion2, indexedRegion1]>
+2021-05-24 20:23:04,056 INFO [CompositeCacheConfigurator] - <Finished configuration in 589 ms.>
+2021-05-24 20:23:04,057 INFO [LRUMemoryCache] - <initialized LRUMemoryCache for indexedRegion1>
+2021-05-24 20:23:04,060 INFO [CacheEventQueue] - <Cache event queue created: CacheEventQueue [listenerId=-1617086700, cacheName=indexedRegion1]>
+2021-05-24 20:23:04,107 WARN [IndexedDiskCache] - <Region [indexedRegion4] Disk cache not shutdown properly, shutting down now.>
+2021-05-24 20:23:04,118 WARN [IndexedDiskCache] - <Region [indexedRegion1] Disk cache not shutdown properly, shutting down now.>
+2021-05-24 20:23:04,110 WARN [IndexedDiskCache] - <Region [indexedRegion2] Disk cache not shutdown properly, shutting down now.>
+2021-05-24 20:23:04,110 WARN [IndexedDiskCache] - <Region [groupIdCache] Disk cache not shutdown properly, shutting down now.>
+2021-05-24 20:23:04,118 WARN [IndexedDiskCache] - <Region [indexedRegion3] Disk cache not shutdown properly, shutting down now.>
+2021-05-24 20:23:04,207 INFO [IndexedDiskCache] - <Region [groupIdCache] Shutdown complete.>
+2021-05-24 20:23:04,207 INFO [IndexedDiskCache] - <Region [indexedRegion3] Shutdown complete.>
+2021-05-24 20:23:04,208 INFO [IndexedDiskCache] - <Region [indexedRegion2] Shutdown complete.>
+2021-05-24 20:23:04,208 INFO [IndexedDiskCache] - <Region [indexedRegion4] Shutdown complete.>
+2021-05-24 20:23:04,209 INFO [IndexedDiskCache] - <Region [indexedRegion1] Shutdown complete.>
