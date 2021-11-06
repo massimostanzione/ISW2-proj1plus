@@ -85,14 +85,10 @@
 				</dependencies>
 			</plugin>
 		</plugins>
-		<resources>
+		<resources>			
 			<resource>
-			<!--  Linking configuration folder -->
-				<directory>src/test-conf</directory>
-				<includes>
-					<include>**/*.properties</include>
-					<include>**/*.ccf</include>
-				</includes>
+				<!-- Linking configuration folder -->
+				<directory>src/test/res</directory>				
 			</resource>
 		</resources>
 		<pluginManagement><!-- lock down plugins versions to avoid using Maven 
