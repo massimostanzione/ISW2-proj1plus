@@ -1,0 +1,21 @@
+version: 2.1
+
+# jobs definitions
+jobs:
+  build-and-test:
+    docker:
+      - image: cimg/openjdk:11.0
+    steps:
+      - checkout
+      - run:
+          name: Build
+          command: mvn -DskipTests clean package
+      - run:
+          name: Test
+          command: mvn test
+          
+# invoking jobs via workflows
+workflows:
+  build-and-test:
+    jobs:
+      - build-and-test
