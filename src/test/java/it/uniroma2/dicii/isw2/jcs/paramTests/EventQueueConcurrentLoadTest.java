@@ -23,6 +23,7 @@ import org.apache.jcs.engine.CacheElement;
 import org.apache.jcs.engine.CacheEventQueue;
 import org.junit.BeforeClass;
 import org.junit.Test;
+import org.junit.jupiter.api.parallel.ResourceLock;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
@@ -143,7 +144,8 @@ public class EventQueueConcurrentLoadTest {
      *
      * @throws Exception when a testCaseName is not recognized
      */
-    @Test(timeout = 10000)
+    @Test(timeout = 3500)
+    @ResourceLock("queue")
     public void compactedSuiteSwitcherTest() throws Exception {
         String testToBeExecuted = testCaseName;
         System.out.println("Starting test: " + testCaseName);
