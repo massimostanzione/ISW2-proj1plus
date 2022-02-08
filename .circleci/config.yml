@@ -10,16 +10,9 @@ jobs:
       - checkout
       - run:
           name: Test
-          command: mvn clean test
-      - run:
-          name: JaCoCo post-test execution
-          command: sh ./jacocoPostExec.sh
-#     - run:
-#         name: SonarCloud analysis
-#         command: mvn sonar:sonar -Dsonar.projectKey=massimostanzione_isw2-proj1plus
-      - run:
-          name: Prepare artifacts
           command: |
+            mvn clean test
+            sh ./jacocoPostExec.sh
             mkdir -p /tmp/isw2-proj1plus
             cp -r ~/project/target/jacoco-gen /tmp/isw2-proj1plus
       - store_artifacts:
