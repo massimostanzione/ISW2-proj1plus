@@ -63,15 +63,15 @@ import org.junit.runners.Parameterized.Parameters;
 @RunWith(Parameterized.class)
 public class LRUMemoryCacheConcurrentUnitTest {
 	/**
+	 * Test parameter.
+	 */
+	private String region;
+
+	/**
 	 * Number of items to cache, twice the configured maxObjects for the memory
 	 * cache regions.
 	 */
 	private static int items = 200;
-
-	/**
-	 * Test parameter.
-	 */
-	private String region;
 
 	/**
 	 * Constructor for the TestDiskCache object.
@@ -79,6 +79,15 @@ public class LRUMemoryCacheConcurrentUnitTest {
 	 * @param region test parameter
 	 */
 	public LRUMemoryCacheConcurrentUnitTest(String region) {
+		configure(region);
+	}
+
+	/**
+	 * Link class parameter with test parameter.
+	 *
+	 * @param region test parameter
+	 */
+	private void configure(String region) {
 		// Test parameters initialization
 		this.region = region;
 	}
@@ -91,7 +100,7 @@ public class LRUMemoryCacheConcurrentUnitTest {
 	 * @implNote must be public and static.
 	 */
 	@BeforeClass
-	public static void configure() {
+	public static void setup() {
 		JCS.setConfigFilename("/TestDiskCache.ccf");
 	}
 
