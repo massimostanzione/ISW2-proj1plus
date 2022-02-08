@@ -10,9 +10,13 @@ jobs:
       - checkout
       - run:
           name: Test
+          command: mvn clean test || true
+      - run:
+          name: JaCoCo post-test execution
+          command: sh ./jacocoPostExec.sh
+      - run:
+          name: Prepare artifacts
           command: |
-            mvn clean test
-            sh ./jacocoPostExec.sh
             mkdir -p /tmp/isw2-proj1plus
             cp -r ~/project/target/jacoco-gen /tmp/isw2-proj1plus
       - store_artifacts:
