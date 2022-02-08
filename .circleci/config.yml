@@ -13,7 +13,8 @@ jobs:
           command: mvn clean test
       - run:
           name: JaCoCo post-test execution
-          command: ./jacocoPostExec.sh
+          commands:
+            - sh ./jacocoPostExec.sh
       - run:
           name: SonarCloud analysis
           command: mvn sonar:sonar -Dsonar.projectKey=massimostanzione_isw2-proj1plus
