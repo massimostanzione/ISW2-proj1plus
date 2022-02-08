@@ -21,7 +21,7 @@ jobs:
           name: Prepare artifacts
           command: |
             mkdir -p /tmp/isw2-proj1plus
-            cp -r target/jacoco-gen /tmp/isw2-proj1plus
+            cp -r ~/project/target/jacoco-gen /tmp/isw2-proj1plus
       - store_artifacts:
           path: /tmp/isw2-proj1plus
 
