@@ -14,9 +14,11 @@ jobs:
       - run:
           name: JaCoCo post-test execution
           command: sh ./jacocoPostExec.sh
-      - run:
-          name: SonarCloud analysis
-          command: mvn sonar:sonar -Dsonar.projectKey=massimostanzione_isw2-proj1plus
+#     - run:
+#         name: SonarCloud analysis
+#         command: mvn sonar:sonar -Dsonar.projectKey=massimostanzione_isw2-proj1plus
+      - store_artifacts:
+          path: ./target/jacoco-gen
           
 # invoking jobs via workflows
 workflows:
