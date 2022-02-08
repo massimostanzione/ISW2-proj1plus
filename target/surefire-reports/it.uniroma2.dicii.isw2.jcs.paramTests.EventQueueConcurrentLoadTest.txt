@@ -1,9 +1,0 @@
--------------------------------------------------------------------------------
-Test set: it.uniroma2.dicii.isw2.jcs.paramTests.EventQueueConcurrentLoadTest
--------------------------------------------------------------------------------
-Tests run: 8, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 4.459 s <<< FAILURE! - in it.uniroma2.dicii.isw2.jcs.paramTests.EventQueueConcurrentLoadTest
-compactedSuiteSwitcherTest[7](it.uniroma2.dicii.isw2.jcs.paramTests.EventQueueConcurrentLoadTest)  Time elapsed: 3.522 s  <<< ERROR!
-org.junit.runners.model.TestTimedOutException: test timed out after 3500 milliseconds
-	at it.uniroma2.dicii.isw2.jcs.paramTests.EventQueueConcurrentLoadTest.runPutDelayTest(EventQueueConcurrentLoadTest.java:242)
-	at it.uniroma2.dicii.isw2.jcs.paramTests.EventQueueConcurrentLoadTest.compactedSuiteSwitcherTest(EventQueueConcurrentLoadTest.java:167)
-
