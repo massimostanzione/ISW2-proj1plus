@@ -17,9 +17,14 @@ jobs:
 #     - run:
 #         name: SonarCloud analysis
 #         command: mvn sonar:sonar -Dsonar.projectKey=massimostanzione_isw2-proj1plus
+      - run:
+          name: Prepare artifacts
+          command: |
+            mkdir -p /tmp/isw2-proj1plus
+            cp -r ./target/jacoco-gen/* /tmp/isw2-proj1plus
       - store_artifacts:
-          path: ./target/jacoco-gen
-          
+          path: /tmp/isw2-proj1plus
+
 # invoking jobs via workflows
 workflows:
   build-and-test:
